@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'utils.css' %}">
+    <!-- Link to 'style.css' -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Link to 'contact.css' -->
+    <link rel="stylesheet" href="{% static 'contact.css' %}">
+    <!-- Link to 'mobile.css' -->
+    <link rel="stylesheet" href="{% static 'mobile.css' %}">
+    <title>Post your blog</title>
+</head>
+<body>
+    <nav class="navigation max-width-1 m-auto">
+        <div class="nav-left">
+            <a href="/">
+                <span><img src="{% static 'logo_f.png' %}" width="94px" alt=""></span>
+            </a>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="{% url 'blogg' %}">Post Your Blog</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <form action="{% url 'search' %}" method="get">
+                <input class="form-input" type="text" name="query" placeholder="Article Search">
+                <button class="btn">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="max-width-1 m-auto">
+        <hr>
+    </div>
+    <div class="contact-content font1 max-width-1 m-auto">
+        <div class="max-width-1 m-auto mx-1">
+            <h2>Let us know what you're thinking  </h2>
+            <form action="{% url 'blogg' %}" method="post">
+                <div class="contact-form">
+                    {% csrf_token %}
+                    <div class="form-box">
+                        <input type="text" name="name" placeholder="Enter Your Name">
+                    </div>
+                    <div class="form-box">
+                        <textarea name="desc" cols="30" rows="10" placeholder="Write your blog"></textarea>
+                    </div>
+                    <div class="form-box">
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'utils.css' %}">
+    <link rel="stylesheet" href="{% static 'mobile.css' %}">
+<!-- Change 2: Linking to 'mobile.css' from static/css directory -->
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navigation max-width-1 m-auto">
+        <div class="nav-left">
+            <a href="/">
+                <span><img src="{% static 'logo_f.png' %}" width="94px" alt=""></span>
+
+            </a>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="{% url 'blogg' %}">Post Your Blog</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <form action="{% url 'search' %}" method="get">
+                <input class="form-input" type="text" name="query" placeholder="Article Search">
+                <button class="btn">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="max-width-1 m-auto">
+        <hr>
+    </div>
+    <div class="m-auto content max-width-1 my-2">
+        <div class="content-left">
+            <h1>Mody University's Placement Hub</h1>
+            <p>Welcome to Mody University of Science and Technology's Placement Insight Hub! Discover invaluable resources and guidance to kickstart your career journey.Explore a range of features designed to enhance your professional readiness, from networking opportunities to comprehensive resources and more.</p>
+        </div>
+        <div class="content-right">
+            <img src="{% static 'bg_img.jpeg' %}" alt="iBlog">
+        </div>
+    </div>
+
+    <div class="max-width-1 m-auto">
+        <hr>
+    </div>
+    <div class="home-articles max-width-1 m-auto font2">
+        <h2>Featured Articles</h2>
+        <div class="year-box adjust-year">
+            <div>
+                <h3>Year </h3>
+            </div>
+            <div>
+                <input type="radio" name="year" id=""> 2020
+            </div>
+            <div>
+                <input type="radio" name="year" id=""> 2021
+            </div>
+        </div>
+        <div class="home-article">
+            <div class="home-article-img">
+                <img src="{% static 'deloitte.jpg' %}" alt="article">
+
+            </div>
+            <div class="home-article-content font1">
+                <a href="{% url 'blogpost' %}">Link to Blog Post</a>
+
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                </a>
+
+                <div>Author Name</div>
+                <span>07 January | 6 min read</span>
+            </div>
+        </div>
+        <div class="home-article">
+            <div class="home-article-img">
+                <img src="{% static 'jp.jpg' %}" alt="article">
+
+            </div>
+            <div class="home-article-content font1">
+                <a href="{% url 'blogpost' %}">Link to Blog Post</a>
+
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                </a>
+
+                <div>Author Name</div>
+                <span>07 January | 6 min read</span>
+            </div>
+        </div>
+        <div class="home-article">
+            <div class="home-article-img">
+                <img src="{% static 'accenture.jpg' %}" alt="article">
+            </div>
+            <div class="home-article-content font1">
+                <a href="{% url 'blogpost' %}">Link to Blog Post</a>
+
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                </a>
+
+                <div>Author Name</div>
+                <span>07 January | 6 min read</span>
+            </div>
+        </div>
+        <div class="home-article">
+            <div class="home-article-img">
+                <img src="{% static 'deloitte.jpg' %}" alt="article">
+
+            </div>
+            <div class="home-article-content font1">
+                <a href="{% url 'blogpost' %}">Link to Blog Post</a>
+
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                </a>
+
+                <div>Author Name</div>
+                <span>07 January | 6 min read</span>
+            </div>
+        </div>
+        <div class="home-article">
+            <div class="home-article-img">
+                <img src="{% static 'jp.jpg' %}" alt="article">
+
+            </div>
+            <div class="home-article-content font1">
+                <a href="{% url 'blogpost' %}">Link to Blog Post</a>
+
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                </a>
+
+                <div>Author Name</div>
+                <span>07 January | 6 min read</span>
+            </div>
+        </div>
+        <div class="home-article">
+            <div class="home-article-img">
+                <img src="{% static 'accenture.jpg' %}" alt="article">
+
+            </div>
+            <div class="home-article-content font1">
+                <a href="{% url 'blogpost' %}">Link to Blog Post</a>
+
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                </a>
+
+                <div>Author Name</div>
+                <span>07 January | 6 min read</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+    </div>
+</body>
+
+</html>
